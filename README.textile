@@ -1,0 +1,51 @@
+h1. Thinking Sphinx with Raspell
+
+This library adds Aspell/Raspell support to "Thinking Sphinx":http://ts.freelancing-gods.com.
+
+h2. Installation
+
+You'll need "the Aspell library":http://www.aspell.net (easily compiled by source, or installed via MacPorts). Don't forget to install the English library as well - there's instructions for both in Evan Weaver's "Raspell README":http://github.com/fauna/raspell.
+
+Once that's set up, grab the gem from "GemCutter":http://gemcutter.org:
+
+<pre><code>sudo gem install thinking-sphinx-raspell \
+  --source http://gemcutter.org</code></pre>
+
+You'll want to add the gem to your @config/environment.rb@ file (assuming you're working on a Rails application):
+
+<pre><code>config.gem('thinking-sphinx-raspell',
+  :lib     => 'thinking_sphinx/raspell',
+  :source  => 'http://gemcutter.org',
+  :version => '>= 1.0.0'
+)</code></pre>
+
+Or, if you wish to do a manual require yourself:
+
+<pre><code>require 'thinking_sphinx/raspell'</code></pre>
+
+h2. Usage
+
+By default, Thinking Sphinx will not overwrite your search query, but you can view suggestions:
+
+<pre><code>@articles = Article.search 'pnacakes'
+@articles.suggestion? #=> true
+@articles.suggestion  #=> 'pancakes'</code></pre>
+
+You can also choose to redo the search using the provided suggestion:
+
+<pre><code>@articles.redo_with_suggestion
+@articles.each do |article|
+  # ...
+end</code></pre>
+
+h2. Limitations
+
+* Currently only uses (and thus requires) the en_US dictionary.
+* Spelling suggestions are done via Raspell's normal mode, and are case insensitive.
+* Only checks normal query strings, not field-specific queries via the @:conditions@ hash.
+
+Patches are very much welcome - I would like to address all of the above limitations.
+
+h2. Copyright
+
+Copyright (c) 2009 "Pat Allan":http://freelancing-gods.com. Released under an MIT licence.
