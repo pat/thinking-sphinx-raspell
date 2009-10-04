@@ -38,13 +38,26 @@ You can also choose to redo the search using the provided suggestion:
   # ...
 end</code></pre>
 
+h2. Configuration
+
+You can customise the following settings - either in your @config/environment.rb@ file, or perhaps in an initializer. Example syntax below highlights the current defaults.
+
+<pre><code>config = ThinkingSphinx::Configuration.instance
+config.raspell.dictionary             = 'en'
+config.raspell.suggestion_mode        = :normal
+config.raspell.options['ignore-case'] = true</code></pre>
+
+You can look at the available options using the following two collections:
+
+<pre><code>config = ThinkingSphinx::Configuration.instance
+config.raspell.dictionaries     #=> ['en', 'en_GB', 'en_US', ... ]
+config.raspell.suggestion_modes #=> [:ultra, :fast, :normal, :badspellers]</code></pre>
+
 h2. Limitations
 
-* Currently only uses (and thus requires) the en_US dictionary.
-* Spelling suggestions are done via Raspell's normal mode, and are case insensitive.
 * Only checks normal query strings, not field-specific queries via the @:conditions@ hash.
 
-Patches are very much welcome - I would like to address all of the above limitations.
+Patches are very much welcome - I would like to address this last remaining limitation.
 
 h2. Copyright
 

@@ -1,4 +1,5 @@
 require 'raspell'
+require 'thinking_sphinx/raspell/configuration'
 
 module ThinkingSphinx
   # Module for adding suggestion support into Thinking Sphinx. This gets
@@ -56,19 +57,12 @@ module ThinkingSphinx
       speller.check(word) ? word : speller.suggest(word).first
     end
     
-    # Aspell instance with all appropriate settings defined (dictionary set to
-    # en_US, suggestion mode set to Aspell::NORMAL, and ignore-case set to
-    # true).
+    # Aspell instance with all appropriate settings defined.
     # 
     # @return [Aspell] the prepared Aspell instance
     # 
     def speller
-      @speller ||= begin
-        speller = Aspell.new('en_US')
-        speller.suggestion_mode = Aspell::NORMAL
-        speller.set_option "ignore-case", "true"
-        speller
-      end
+      ThinkingSphinx::Configuration.instance.raspell.speller
     end
   end
 end

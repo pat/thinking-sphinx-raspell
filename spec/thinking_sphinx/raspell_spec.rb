@@ -1,6 +1,10 @@
 require 'spec/spec_helper'
 
 describe ThinkingSphinx::Search do
+  before :each do
+    ThinkingSphinx::Configuration.instance.raspell.reset
+  end
+  
   describe '#suggestion' do
     it "should return a spelling suggestion, if there is one" do
       search = ThinkingSphinx::Search.new('wodrs incorret on purpose')
