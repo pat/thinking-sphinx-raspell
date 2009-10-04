@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{thinking-sphinx-raspell}
-  s.version = "1.0.0"
+  s.version = "1.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pat Allan"]
@@ -20,7 +20,8 @@ Gem::Specification.new do |s|
     "LICENSE",
      "README.textile",
      "VERSION.yml",
-     "lib/thinking_sphinx/raspell.rb"
+     "lib/thinking_sphinx/raspell.rb",
+     "lib/thinking_sphinx/raspell/configuration.rb"
   ]
   s.homepage = %q{http://ts.freelancing-gods.com}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -29,6 +30,7 @@ Gem::Specification.new do |s|
   s.summary = %q{An add-on gem for spelling suggestions in Thinking Sphinx}
   s.test_files = [
     "spec/spec_helper.rb",
+     "spec/thinking_sphinx/raspell/configuration_spec.rb",
      "spec/thinking_sphinx/raspell_spec.rb"
   ]
 
