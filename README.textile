@@ -53,6 +53,8 @@ You can look at the available options using the following two collections:
 config.raspell.dictionaries     #=> ['en', 'en_GB', 'en_US', ... ]
 config.raspell.suggestion_modes #=> [:ultra, :fast, :normal, :badspellers]</code></pre>
 
+If you need more documentation, you can check out the YARD files "on rdoc.info":http://rdoc.info/projects/freelancing-god/thinking-sphinx-raspell.  This isn't a big library, though - what you see in this readme is pretty much what you get.
+
 h2. Limitations
 
 * Only checks normal query strings, not field-specific queries via the @:conditions@ hash.
