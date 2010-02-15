@@ -24,7 +24,7 @@ module ThinkingSphinx
     #   original
     # 
     def suggestion?
-      suggestion != query
+      suggestion != all_args
     end
     
     # Modifies the current search object, switching queries and removing any

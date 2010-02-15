@@ -27,6 +27,13 @@ describe ThinkingSphinx::Search do
       search = ThinkingSphinx::Search.new('words all correct here')
       search.suggestion?.should be_false
     end
+    
+    it "should return false if there are conditions and no spelling suggestion" do
+      search = ThinkingSphinx::Search.new('words',
+        :conditions => {:all => 'here'}
+      )
+      search.suggestion?.should be_false
+    end
   end
   
   describe '#redo_with_suggestion' do
