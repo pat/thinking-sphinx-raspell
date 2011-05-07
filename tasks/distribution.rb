@@ -1,6 +1,3 @@
-require 'yard'
-require 'jeweler'
-
 YARD::Rake::YardocTask.new
 
 Jeweler::Tasks.new do |gem|
@@ -10,10 +7,6 @@ Jeweler::Tasks.new do |gem|
   gem.email       = 'pat@freelancing-gods.com'
   gem.homepage    = 'http://ts.freelancing-gods.com'
   gem.authors     = 'Pat Allan'
-  gem.add_dependency 'thinking-sphinx', '>= 1.2.12'
-  gem.add_dependency 'raspell',         '>= 1.1'
-  gem.add_development_dependency 'rspec'
-  gem.add_development_dependency 'yard'
   
   gem.files = FileList[
     "lib/**/*.rb",

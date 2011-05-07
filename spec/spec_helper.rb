@@ -1,13 +1,14 @@
-$LOAD_PATH.unshift(File.dirname(__FILE__))
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require 'rubygems'
+require 'bundler'
+require 'logger'
 
-require 'spec'
-require 'spec/autorun'
+$:.unshift File.dirname(__FILE__) + '/../lib'
+$:.unshift File.dirname(__FILE__) + '/..'
 
-require 'thinking_sphinx'
-require 'raspell'
 require 'thinking_sphinx/raspell'
 
-Spec::Runner.configure do |config|
+ThinkingSphinx::ActiveRecord::LogSubscriber.logger = Logger.new(StringIO.new)
+
+RSpec.configure do |config|
   #
 end

@@ -1,3 +1,5 @@
+require 'singleton'
+
 module ThinkingSphinx
   module Raspell
     # Configuration settings for spelling suggestions in Thinking Sphinx. You

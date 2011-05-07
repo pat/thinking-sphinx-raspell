@@ -1,4 +1,5 @@
 require 'raspell'
+require 'thinking_sphinx'
 require 'thinking_sphinx/raspell/configuration'
 
 module ThinkingSphinx
