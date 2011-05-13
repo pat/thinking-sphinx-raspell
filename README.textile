@@ -4,20 +4,27 @@ This library adds Aspell/Raspell support to "Thinking Sphinx":http://ts.freelanc
 
 h2. Installation
 
-You'll need "the Aspell library":http://www.aspell.net (easily compiled by source, or installed via MacPorts). Don't forget to install the English library as well - there's instructions for both in Evan Weaver's "Raspell README":http://github.com/fauna/raspell.
+You'll need "the Aspell library":http://www.aspell.net (easily compiled by source, or installed via Homebrew or MacPorts). Don't forget to install the English library as well - there's instructions for both in Evan Weaver's "Raspell README":http://github.com/fauna/raspell.
 
-Once that's set up, grab the gem from "GemCutter":http://gemcutter.org:
+Once that's set up, grab the gem:
 
-<pre><code>sudo gem install thinking-sphinx-raspell \
-  --source http://gemcutter.org</code></pre>
+<pre><code>gem install thinking-sphinx-raspell</code></pre>
 
-You'll want to add the gem to your @config/environment.rb@ file (assuming you're working on a Rails application):
+You'll want to add the gem to your @Gemfile@:
 
-<pre><code>config.gem('thinking-sphinx-raspell',
+<pre><code>gem 'thinking-sphinx-raspell', '1.1.1',
+  :require => 'thinking_sphinx/raspell'</code></pre>
+
+If you're using Ruby 1.9, @raspell@ doesn't currently work, but recent commits to this library now use @dmarkow-raspell@ instead - so use Github as your source:
+
+<pre><code>gem 'thinking-sphinx-raspell',
+  :git => 'git://github.com/freelancing-god/thinking-sphinx-raspell.git'</code></pre>
+
+Or, if using older versions of Rails, your @config/environment.rb@ file:
+
+<pre><code>config.gem 'thinking-sphinx-raspell',
   :lib     => 'thinking_sphinx/raspell',
-  :source  => 'http://gemcutter.org',
-  :version => '>= 1.0.0'
-)</code></pre>
+  :version => '>= 1.0.0'</code></pre>
 
 Or, if you wish to do a manual require yourself:
 
@@ -63,4 +70,4 @@ Patches are very much welcome - I would like to address this last remaining limi
 
 h2. Copyright
 
-Copyright (c) 2009 "Pat Allan":http://freelancing-gods.com. Released under an MIT licence.
+Copyright (c) 2009-2011 "Pat Allan":http://freelancing-gods.com. Released under an MIT licence.
