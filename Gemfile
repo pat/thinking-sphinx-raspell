@@ -1,6 +1,6 @@
 source :rubygems
 
-gem 'dmarkow-raspell', '>= 1.2.2'
+gem 'raspell',         '>= 1.2.2'
 gem 'thinking-sphinx', '>= 1.2.12'
 
 group :development do
