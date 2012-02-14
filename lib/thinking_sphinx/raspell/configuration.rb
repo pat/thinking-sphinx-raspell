@@ -119,7 +119,7 @@ module ThinkingSphinx
       # @return [Aspell] a new prepared Aspell instance
       # 
       def build_speller
-        speller = Aspell.new(dictionary)
+        speller = Aspell.new(dictionary, nil, nil, "utf-8")
         speller.suggestion_mode = actual_suggestion_mode
         actual_options.each do |key, value|
           speller.set_option key, value
