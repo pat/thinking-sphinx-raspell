@@ -12,19 +12,14 @@ Once that's set up, grab the gem:
 
 You'll want to add the gem to your @Gemfile@:
 
-<pre><code>gem 'thinking-sphinx-raspell', '1.1.1',
+<pre><code>gem 'thinking-sphinx-raspell', '1.1.2',
   :require => 'thinking_sphinx/raspell'</code></pre>
-
-If you're using Ruby 1.9, @raspell@ doesn't currently work, but recent commits to this library now use @dmarkow-raspell@ instead - so use Github as your source:
-
-<pre><code>gem 'thinking-sphinx-raspell',
-  :git => 'git://github.com/freelancing-god/thinking-sphinx-raspell.git'</code></pre>
 
 Or, if using older versions of Rails, your @config/environment.rb@ file:
 
 <pre><code>config.gem 'thinking-sphinx-raspell',
   :lib     => 'thinking_sphinx/raspell',
-  :version => '>= 1.0.0'</code></pre>
+  :version => '>= 1.1.2'</code></pre>
 
 Or, if you wish to do a manual require yourself:
 
