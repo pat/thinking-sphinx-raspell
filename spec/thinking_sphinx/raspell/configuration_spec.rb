@@ -120,4 +120,17 @@ describe ThinkingSphinx::Raspell::Configuration do
       @config.speller
     end
   end
+
+  describe "#speller=" do
+    it "should set the speller" do
+      aspell = Aspell.new('en')
+
+      @config.speller = aspell
+      @config.speller.should == aspell
+    end
+
+    it "should raise an arguement error if the speller is not an Aspell instance" do
+      lambda { @config.speller = 'Aspell' }.should raise_error(ArgumentError)
+    end
+  end
 end

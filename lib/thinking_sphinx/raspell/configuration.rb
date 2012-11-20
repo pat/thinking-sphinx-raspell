@@ -81,7 +81,17 @@ module ThinkingSphinx
       def suggestion_modes
         [:ultra, :fast, :normal, :badspellers]
       end
-      
+
+      # Set the speller. Accepts Aspell instances.
+      #
+      # @param [Aspell] speller Aspell instance.
+      # @raise [ArgumentError] if the speller is not an Aspell instance
+      def speller=(speller)
+        raise ArgumentError, 'invalid Aspell speller' unless speller.is_a? Aspell
+
+        @speller = speller
+      end
+
       # Aspell instance with all appropriate settings defined.
       # 
       # @return [Aspell] the prepared Aspell instance
