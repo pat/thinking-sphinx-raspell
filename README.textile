@@ -4,7 +4,7 @@ This library adds Aspell/Raspell support to "Thinking Sphinx":http://pat.github.
 
 h2. Installation
 
-You'll need "the Aspell library":http://www.aspell.net (easily compiled by source, or installed via Homebrew or MacPorts). Don't forget to install the English library as well - there's instructions for both in Evan Weaver's "Raspell README":http://github.com/fauna/raspell.
+You'll need "the Aspell library":http://www.aspell.net (easily compiled by source, or installed via Homebrew or MacPorts). Don't forget to install the English library as well - there's instructions for both in Evan Weaver's "Raspell README":http://github.com/evan/raspell.
 
 Once that's set up, grab the gem:
 
