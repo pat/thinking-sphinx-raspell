@@ -1,3 +1,5 @@
+*Please Note*: This project is no longer supported. It only works with Thinking Sphinx v1/v2, whereas the v3+ releases are what has been actively supported since 2012. Patches are welcome to rewrite this for v3 support if anyone's feeling particularly keen to modernise this gem.
+
 h1. Thinking Sphinx with Raspell
 
 This library adds Aspell/Raspell support to "Thinking Sphinx":http://pat.github.io/thinking-sphinx
