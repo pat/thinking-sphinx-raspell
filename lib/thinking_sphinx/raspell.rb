@@ -25,7 +25,20 @@ module ThinkingSphinx
     #   original
     # 
     def suggestion?
+      if query_only_digits?
+        return false
+      end
       suggestion != all_args
+    end
+
+    # When you pass digits only to aspell it will always return a false positive 
+    # suggestion 'W'.
+    # Not sure if aspell is meant to ignore digits, or it's the C API that raspell
+    # is using.
+    # I've asked clarification in the aspell ML:
+    # http://lists.gnu.org/archive/html/aspell-user/2011-10/msg00003.html
+    def query_only_digits?
+      all_args =~ /^\d+$/
     end
     
     # Modifies the current search object, switching queries and removing any

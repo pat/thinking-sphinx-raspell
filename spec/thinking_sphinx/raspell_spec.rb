@@ -27,6 +27,11 @@ describe ThinkingSphinx::Search do
       search = ThinkingSphinx::Search.new('words all correct here')
       search.suggestion?.should be_false
     end
+
+    it "should return false if the query has just numbers" do
+      search = ThinkingSphinx::Search.new('1981')
+      search.suggestion?.should be_false
+    end
     
     it "should return false if there are conditions and no spelling suggestion" do
       search = ThinkingSphinx::Search.new('words',
