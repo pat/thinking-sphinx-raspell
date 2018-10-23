@@ -6,3 +6,4 @@ pkg
 *.tmproj
 .yardoc
 doc
+Gemfile.lock
