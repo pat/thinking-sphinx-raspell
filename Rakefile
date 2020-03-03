@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'bundler'
+require 'bundler/gem_tasks'
 
 Bundler.require :default, :development
 
-require "#{File.dirname(__FILE__)}/tasks/distribution"
-require "#{File.dirname(__FILE__)}/tasks/testing"
+YARD::Rake::YardocTask.new
